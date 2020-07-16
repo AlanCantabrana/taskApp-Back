@@ -40,7 +40,7 @@ app.post('/login', (req, res) => {
                 }
             });
         }
-
+        //crea el token
         let token = jwt.sign({
             usuario: usuarioDB
         }, process.env.SEED,

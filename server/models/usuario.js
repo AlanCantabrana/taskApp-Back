@@ -18,7 +18,7 @@ let usuarioSchema = new Schema({
     },
     email: {
         type: String,
-        unique: true,
+        unique: true,               //email es unico
         required: [true, 'El correo es necesario']
     },
     password: {
@@ -55,7 +55,7 @@ usuarioSchema.methods.toJSON = function() {
 }
 
 
-usuarioSchema.plugin(uniqueValidator, { message: '{PATH} debe de ser único' });
+usuarioSchema.plugin(uniqueValidator, { message: '{PATH} debe de ser único' });        //toma el modelo del esquema donde email es unico
 
 
 module.exports = mongoose.model('Usuario', usuarioSchema);
